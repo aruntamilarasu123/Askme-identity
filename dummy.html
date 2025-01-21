@@ -1,358 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Askme identity</title>
-    <link rel="icon" href="./Asstes/logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
-    <!-- font-family: "Righteous", serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <!-- font-family: "Saira", serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- font-family: "Inter", serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-</head>
-<style>
-html, body {
-    margin: 0px;
-    padding: 0px;
-}
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0px;
-    padding: 0px;
-}
-</style>
-<body>
-    <!-- Header section -->
-    <header class="flex h-[80px] px-20 
-    max-[767px]:px-[10px] max-[767px]:py-[1%] max-[767px]:h-[auto]
-    max-[480px]:py-[1%] max-[480px]:h-[auto] max-[480px]:px-[5px]">
-        <!-- Header Left Section -->
-        <div class="flex items-center w-[20%] 
-        max-[767px]:w-[10%]
-        max-[480px]:w-[10%]">
-            <img class="w-[55%] 
-            max-[767px]:w-[100%] 
-            max-[480px]:w-[100%]" src="./Asstes/logo.png"/>
-        </div>
-        <!-- Header Middule Section -->
-        <div class="flex items-center justify-end w-[50%] pr-[15%] 
-        max-[767px]:justify-evenly max-[767px]:pr-[0%] max-[767px]:w-[55%]
-        max-[480px]:justify-evenly max-[480px]:pr-[0%] max-[480px]:w-[50%]">
-            <nav  class="max-[767px]:w-[90%] max-[480px]:w-[90%]">
-                <ul class="flex gap-x-[18%] font-[Righteous] text-[16px]
-                max-[767px]:text-[11px] max-[767px]:gap-x-[0%] max-[767px]:justify-evenly
-                max-[480px]:text-[7px] max-[480px]:gap-x-[0%] max-[480px]:justify-evenly">
-                    <li class="cursor-pointer hover:text-blue-500">Home</li>
-                    <li class="cursor-pointer hover:text-blue-500">About</li>
-                    <li class="cursor-pointer hover:text-blue-500">Courses</li>
-                    <li class="cursor-pointer hover:text-blue-500">Contact</li>
-                </ul>
-            </nav>
-        </div>
-        <div class="flex justify-between w-[10%] 
-        max-[767px]:w-[15%] 
-        max-[480px]:w-[20%]">
-            <button type="button"><img class="w-[90%] h-[auto] hover:w-[100%] max-[767px]:w-[65%] max-[767px]:hover:w-[70%] max-[480px]:w-[45%] max-[480px]:hover:w-[50%]" src="./Asstes/cart.png"/></button>
-            <button type="button"><img class="w-[90%] h-[auto] hover:w-[100%] max-[767px]:w-[65%] max-[767px]:hover:w-[70%] max-[480px]:w-[45%] max-[480px]:hover:w-[50%]" src="./Asstes/profile.png"/></button>
-            <button type="button"><img class="w-[90%] h-[auto] hover:w-[100%] max-[767px]:w-[65%] max-[767px]:hover:w-[70%] max-[480px]:w-[45%] max-[480px]:hover:w-[50%]" src="./Asstes/search.png"/></button>
-        </div>
-        <!-- Header Right Section -->
-        <div class="flex items-center justify-end w-[20%] gap-x-[5%] font-['Saira'] font-medium text-base 
-        max-[767px]:justify-evenly max-[767px]:gap-x-[0%] 
-        max-[490px]:justify-evenly max-[480px]:gap-x-[0%]">
-            <button class=" flex items-center justify-center w-[40%] h-[60%] p-[2%] rounded-md underline underline-offset-[10%] text-[#4A4A4A] 
-            active:text-[#4A4A4A] bg-gradient-to-r hover:from-[#083F9B] hover:to-[#7F56D9] hover:no-underline hover:text-white 
-            max-[767px]:text-[11px] max-[480px]:text-[7px]">Login</button>
-            <button class="flex items-center justify-center w-[40%] h-[60%] p-[2%] rounded-md underline underline-offset-[10%] text-[#4A4A4A] 
-            active:text-[#4A4A4A] bg-gradient-to-r hover:from-[#083F9B] hover:to-[#7F56D9] hover:no-underline hover:text-white 
-            max-[767px]:text-[11px] max-[480px]:text-[7px]">Signup</button>
-        </div>
-    </header>
-    <!-- Hero Section -->
-    <section class="grid grid-cols-2 px-20 pt-[5%] pb-[6%] bg-indigo-700 relative 
-    max-[767px]:grid-cols-1 max-[767px]:px-[5px] max-[767px]:pb-[0px] 
-    max-[480px]:grid-cols-1 max-[480px]:px-[5px] max-[480px]:pb-[0px]" style="background-image: linear-gradient(53deg,#4A16BD 0%, #04016C 100%);">
-        <div class="w-[10%] h-[20%] rounded-full bg-white blur-[72px] overflow-hidden absolute left-[-6%] top-[39%]"></div>
-        <!-- Hero Left Section-->
-        <div class="flex-col max-[767px]:text-center max-[480px]:text-center">
-            <p class="font-[Righteous] uppercase tracking-[0.25em] text-white text-[12px] mb-[4%] 
-            max-[767px]:text-[13px] max-[767px]:mb-[2%]
-            max-[480px]:text-[8px] max-[480px]:mb-[2%]">Successful coaches are visionaries</p>
-            <h1 class="text-white font-[Righteous] text-[55px] pr-[10%] mb-[6%] leading-[70px] 
-            max-[767px]:text-[23px] max-[767px]:pr-[0%] max-[767px]:leading-[33px] max-[767px]:mb-[2%]
-            max-[480px]:text-[17px] max-[480px]:pr-[0%] max-[480px]:leading-[33px] max-[480px]:mb-[2%]">Good <span class="text-[#0E38CD]">coaching</span> is good teaching & nothing else.</h1>
-            <div class="flex gap-x-[7%] font-[Righteous] mb-[9%] 
-            max-[767px]:gap-x-[8%] max-[767px]:justify-evenly max-[767px]:mb-[5%] 
-            max-[480px]:gap-x-[8%] max-[480px]:justify-evenly max-[480px]:mb-[5%]">
-                <button class="w-[30%] h-[56px] rounded-[8px] text-white text-base underline decoration-[2px] hover:border-white hover:border-[1px] hover:no-underline active:text-[#4A16BD] active:bg-white active:no-underline 
-                max-[767px]:w-[30%] max-[767px]:text-[15px] max-[767px]:h-[45px] 
-                max-[480px]:w-[30%] max-[480px]:text-[12px] max-[480px]:h-[45px]">View Courses</button>
-                <button class="w-[37%] h-[56px] text-base text-white rounded-[8px] underline decoration-[2px] hover:border-white hover:border-[1px] hover:no-underline active:text-[#4A16BD] active:bg-white active:no-underline 
-                max-[767px]:w-[40%]  max-[767px]:text-[15px] max-[767px]:h-[45px] 
-                max-[480px]:w-[40%]  max-[480px]:text-[12px] max-[480px]:h-[45px]">Get Free Consultation</button>
-            </div>
-            <div class="flex items-center w-[74%] h-14 pr-[1%] pl-[4%] bg-white rounded-[8px] gap-x-[2%] font-[Righteous] 
-            max-[767px]:w-[60%] max-[767px]:h-[40px] max-[767px]:pr-[5px] max-[767px]:pl-[15px] max-[767px]:gap-x-[15px] max-[767px]:justify-between max-[767px]:justify-self-center 
-            max-[480px]:w-[80%] max-[480px]:h-[40px] max-[480px]:pr-[5px] max-[480px]:pl-[15px] max-[480px]:gap-x-[15px] max-[480px]:justify-between max-[480px]:justify-self-center">
-                <input class="w-[72%] h-[60%] outline-none placeholder:text-[#4F547B] 
-                max-[767px]:w-[70%] max-[767px]:text-[15px] 
-                max-[480px]:w-[70%] max-[480px]:text-[12px]" placeholder="What do you want to learn today?" />
-                <button class="w-[28%] h-[80%] flex items-center justify-evenly rounded-[8px] text-white bg-gradient-to-r from-[#083F9B] to-[#7F56D9] active:text-[black] 
-                max-[767px]:w-[26%] max-[767px]:h-[30px] max-[767px]:text-[15px] 
-                max-[480px]:w-[26%] max-[480px]:h-[30px] max-[480px]:text-[12px]">
-                    <img class="w-[20%]" src="./Asstes/search2.png" alt="search">Search
-                </button>
-            </div>
-        </div>
-        <!-- Hero Right Section -->
-        <div class="flex text-white relative justify-end 
-        max-[767px]:justify-normal max-[480px]:justify-normal">
-            <div class="mt-[7%] absolute top-[1%] left-[0%] flex flex-col items-center 
-            max-[767px]:mt-[50px] max-[767px]:top-[2px] 
-            max-[480px]:mt-[50px] max-[480px]:top-[2px]">
-                <div class="h-[35px] w-[1px] bg-[#4883FF] mb-[13px] 
-                max-[767px]:h-[26px] max-[767px]:mb-[8px] 
-                max-[480px]:h-[21px] max-[480px]:mb-[8px]"></div>
-                <div class="p-[7px] bg-[#0094E7] rounded-full max-[767px]:p-[7px] max-[480px]:p-[5px]">
-                    <img class="max-[767px]:w-[6px] max-[480px]:w-[4px]" src="./Asstes/“.png" alt="">
-                </div>
-                <div class="h-[35px] w-[1px] bg-[#4883FF] mt-[13px] 
-                max-[767px]:h-[26px] max-[767px]:mt-[8px]
-                max-[480px]:h-[21px] max-[480px]:mt-[8px]"></div>
-            </div>
-            <div class="w-[36%] mt-[7%] font-[Righteous] absolute top-0 left-[7%] 
-            max-[767px]:w-[50%] max-[767px]:mt-[50px] max-[767px]:static max-[767px]:ml-[30px] 
-            max-[480px]:w-[50%] max-[480px]:mt-[50px] ml-[25px] max-[480px]:static">
-                <h5 class="mb-[14px] tracking-[1px] text-[13px] 
-                max-[767px]:text-[14px] max-[767px]:mb-[5px] 
-                max-[480px]:text-[10px] max-[480px]:mb-[5px]">Shyam</h5>
-                <p class="text-[11px] tracking-[1px] text-[Regular] 
-                max-[767px]:text-[11px] 
-                max-[480px]:text-[8px]">In a coaching role, you ask the questions and rely more on your staff, who become the experts, to provide the information.</p>
-                <p class="font-[Inter] text-[11px] mt-[10px] text-[#0094E7] 
-                max-[767px]:text-[9px] max-[767px]:mt-[5px] 
-                max-[480px]:text-[8px] max-[480px]:mt-[5px]">4.9</p>
-            </div>
-                <img class="w-[59%] mix-blend-multiply absolute z-10 
-                max-[767px]:w-[95px] max-[767px]:right-[53px] max-[767px]:top-[33px] 
-                max-[480px]:w-[95px] max-[480px]:right-[53px] max-[480px]:top-[14px]" src="./Asstes/women.png" alt="women">
-                <div class="w-[80%] h-[125%] rounded-full bg-[#FFFFFF] blur-[100px] absolute z-0 right-[-13%] 
-                max-[767px]:w-[156px] max-[767px]:h-[150px] max-[767px]:ml-[91px] max-[767px]:mt-[33px] max-[767px]:blur-[20px] max-[767px]:static 
-                max-[480px]:w-[100px] max-[480px]:h-[150px] max-[480px]:ml-[31px] max-[480px]:mt-[14px] max-[480px]:blur-[20px] max-[480px]:static"></div>
-        </div>
-        <div class="w-[220px] h-[200px] absolute bottom-[0px] left-[42%] flex items-end max-[767px]:hidden max-[480px]:hidden">
-            <div class="flex relative overflow-hidden">
-                <img class="w-[217px] h-[215px]" src="./Asstes/t1.png" alt="">
-                <div class="w-[186px] h-[287px] border-dashed border-[2px] border-[#7764bc] rounded-full absolute left-[15px] bottom-[-87px]"></div>
-                <img class="absolute w-[153px] h-[181px] left-[31px] bottom-[0px]" src="./Asstes/t1.png" alt="">
-            </div>
-        </div>
-    </section>
-    <!-- Podcasts section -->
-     <section class="px-20 py-[1%] max-[767px]:px-[10px] max-[480px]:px-[5px]" style="background-image: linear-gradient(53deg,#7E08C7 0%, #6142da 100%);">
-        <div class="flex justify-evenly">
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/spotify.png');">
-            </div>
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/amazon.png');">
-            </div>
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/cisco.png');">
-            </div>
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/logitech.png');">
-            </div>
-        </div>
-    </section>
-    <!-- Feature Courses Section -->
-    <section class="px-20 max-[767px]:p-[10px] max-[480px]:p-[10px]" style="background-image: linear-gradient(-180deg,#F0F3FF 0%, #D9ECFF 100%);">
-        <div class="mt-[6%] relative max-[767px]:mt-[14px] max-[480px]:mt-[14px]">
-            <img class="absolute w-[6%] left-[4%] top-[7%]" src="./Asstes/Ellipse 118.png" alt="">
-            <h3 class="font-[Righteous] text-center text-[33px] 
-            max-[767px]:text-[18px] max-[480px]:text-[14px]">Featured <span class="text-[#4883FF]">Courses</span></h3>
-            <p class="font-[Righteous] text-center text-[21px] uppercase mb-20 
-            max-[767px]:text-[12px] max-[767px]:mb-[30px] 
-            max-[480px]:text-[8px] max-[480px]:mb-[30px] ">The feature courses are we invented our teaching part</p>
-        </div>
-    <!-- Cart Section -->
-    <div class="grid grid-cols-3 gap-8 mb-16 font-[Saira] 
-    max-[767px]:grid-cols-2 max-[767px]:mb-[44px] 
-    max-[480px]:grid-cols-2 max-[480px]:mb-[44px]">
-        <!-- Cart One -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
-            <div>
-                <img class="rounded-t-xl" src="./Asstes/cart1.png" alt="cart1">
-            </div>
-            <div class="px-3.5 py-3.5 max-[767px]:px-[14px] max-[767px]:py-[14px] max-[480px]:px-[14px] max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
-                    <p class="cursor-pointer">1,957 Students</p>
-                    <p class="cursor-pointer">01h 59m</p>
-                </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
-                    <h4 class="cursor-pointer">Motion Graphics: Create a Nice Typography Animation</h4>
-                </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
-                    <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px]
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- Cart Two -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
-            <div>
-                <img class="rounded-t-xl" src="./Asstes/cart2.png" alt="cart1">
-            </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px]
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
-                    <p class="cursor-pointer">9,575 Students</p>
-                    <p class="cursor-pointer">01h 59m</p>
-                </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px]
-                max-[480px]:mt-[0px] max-[480px]:text-[10px] ">
-                    <h4 class="cursor-pointer">Motion Graphics: Create a Nice Typography Animation</h4>
-                </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
-                    <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px]
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- Cart Three -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
-            <div>
-                <img class="rounded-t-xl" src="./Asstes/cart3.png" alt="cart1">
-            </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px] 
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
-                    <p class="cursor-pointer">2957 Students</p>
-                    <p class="cursor-pointer">02h 49m</p>
-                </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
-                    <h4 class="cursor-pointer">Education Software and PHP and JS System Script</h4>
-                </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
-                    <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- Cart Four -->
-        <div class="bg-white rounded-xl 
-        max-[767px]:h-[320px] 
-        max-[480px]:h-[228px]">
-            <div>
-                <img class="rounded-t-xl" src="./Asstes/cart4.png" alt="cart1">
-            </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px] 
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
-                    <p class="cursor-pointer">5,457 Students</p>
-                    <p class="cursor-pointer">01h 49m</p>
-                </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px]
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
-                    <h4 class="cursor-pointer">The Complete Financial Analyst Training & Investing</h4>
-                </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
-                    <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- Cart Five -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
-            <div>
-                <img class="rounded-t-xl" src="./Asstes/cart5.png" alt="cart5">
-            </div>
-            <div class="px-3.5 py-3.5 max-[767px]:px-[14px] max-[767px]:py-[14px] max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px] ">
-                    <p class="cursor-pointer">595 Students</p>
-                    <p class="cursor-pointer">01h 49m</p>
-                </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
-                    <h4 class="cursor-pointer">Marketing 2023: Complete Guide To Instagram Growth</h4>
-                </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
-                    <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="cart">
-                </div>
-            </div>
-        </div>
-        <!-- Cart Six -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
-            <div>
-                <img class="rounded-t-xl" src="./Asstes/cart6.png" alt="cart6">
-            </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px] 
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
-                    <p class="cursor-pointer">458 Students</p>
-                    <p class="cursor-pointer">03h 00m</p>
-                </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
-                    <h4 class="cursor-pointer">Learn 3D Modelling and Design for Beginners</h4>
-                </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
-                    <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="cart">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="flex justify-center pb-16 max-[767px]:pb-[36px] max-[480px]:pb-[36px]">
-        <button class="px-4 py-2 font-[Righteous] text-white rounded-lg min-w-24 border-[2px] bg-gradient-to-r from-[#083F9B] to-[#7F56D9] bg-gradient-to-r hover:from-[#FFFFFF] hover:to-[#FFFFFF] hover:border-[#083F9B] hover:text-blue-500 active:text-white bg-gradient-to-r active:from-[#083F9B] active:to-[#7F56D9] 
-        max-[767pxpx]:px-[12px] max-[767px]:py-[4px] max-[767px]:text-[10px] 
-        max-[480px]:px-[12px] max-[480px]:py-[4px] max-[480px]:text-[10px]">Explore courses</button>
-    </div>
-    </section>
-    <!-- Our Courses Explanetion Section-->
-    <section class="px-20 py-20 relative overflow-hidden 
+<!-- Our Courses Explanetion Section-->
+  <!-- <section class="px-20 py-20 relative overflow-hidden 
     max-[767px]:px-[10px] max-[767px]:py-[10px]
     max-[480px]:px-[10px] max-[480px]:py-[10px] text-white" style="background-image: linear-gradient(-131deg, #1660db 0%,#9c9ced 100%);">  
     <div class="text-center">
@@ -426,9 +73,10 @@ h1, h2, h3, h4, h5, h6, p {
                 <img class="absolute w-[153px] h-[181px] left-[31px] bottom-[0px]" src="./Asstes/t1.png" alt="">
             </div>
         </div>  
-    </section>
-    <!-- Categories Section -->
-    <section class="px-[80px] py-[80px] 
+    </section> -->
+
+    <!-- Categories Section
+     <section class="px-[80px] py-[80px] 
     max-[767px]:px-[10px] max-[767px]:py-[14px] 
     max-[480px]:px-[10px] max-[480px]:py-[14px]" style="background-image: linear-gradient(-180deg,#D9ECFF 100%, #D9ECFF 0%);">
         <h3 class="font-[Righteous] text-center text-5xl mb-3
@@ -437,11 +85,11 @@ h1, h2, h3, h4, h5, h6, p {
         <p class="font-[Righteous] text-center text-md mb-20
         max-[767px]:text-[16px] max-[767px]:mb-[35px] 
         max-[480px]:text-[10px] max-[480px]:mb-[20px]">100+ unique online course list designs</p>
-        <!-- Cart Section -->
+        Cart Section
         <div class="grid grid-cols-6 gap-x-4 font-[Righteous] 
         max-[767px]:grid-cols-3 max-[767px]:justify-evenly 
         max-[480px]:grid-cols-3">
-            <!-- Cart One -->
+            Cart One
             <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
             max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
             max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
@@ -453,7 +101,7 @@ h1, h2, h3, h4, h5, h6, p {
                 max-[480px]:text-[11px]">Digtal Marketing</h1>
                 <p class="cursor-pointer text-xs max-[767px]:text-[11px] max-[480px]:text-[9px]">25 Courses</p>
             </div>
-            <!-- Cart Two -->
+            Cart Two
             <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
             max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px]
             max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
@@ -465,7 +113,7 @@ h1, h2, h3, h4, h5, h6, p {
                 max-[480px]:text-[11px]">Web Development</h1>
                 <p class="cursor-pointer text-xs max-[767px]:text-[11px] max-[480px]:text-[9px]">16 Courses</p>
             </div>
-            <!-- Cart Three -->
+            Cart Three
             <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
             max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
             max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
@@ -477,7 +125,7 @@ h1, h2, h3, h4, h5, h6, p {
                 max-[480px]:text-[11px]">Art & Humanities</h1>
                 <p class="cursor-pointer text-xs max-[767px]:text-[11px] max-[480px]:text-[9px]">76 Courses</p>
             </div>
-            <!-- Cart Four -->
+            Cart Four
             <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
             max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
             max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
@@ -491,7 +139,7 @@ h1, h2, h3, h4, h5, h6, p {
                 max-[767px]:text-[11px]
                 max-[480px]:text-[9px]">22 Courses</p>
             </div>
-            <!-- Cart Five -->
+            Cart Five
             <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
             max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
             max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
@@ -505,7 +153,7 @@ h1, h2, h3, h4, h5, h6, p {
                 max-[767px]:text-[11px]
                 max-[480px]:text-[9px]">110 Courses</p>
             </div>
-            <!-- Cart Six -->
+            Cart Six
             <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
             max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
             max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
@@ -520,28 +168,39 @@ h1, h2, h3, h4, h5, h6, p {
                 max-[480px]:text-[9px]">85 Courses</p>
             </div>
         </div>
-    </section>
+    </section> -->
+
     <!-- Subscribe Section -->
-    <section class="px-20 py-20 
+<!-- <section class="px-20 py-20 bg-red-400
     max-[767px]:px-[5px] max-[767px]:py-[10px]
     max-[480px]:px-[5px] max-[480px]:py-[10px]">
-        <div class="flex pb-[127px] justify-center relative 
+    FIRST ZONE
+        <div class="flex pb-[127px] justify-center relative bg-yellow-400
         max-[767px]:pb-[0px] max-[767px]:h-[148px]
         max-[480px]:pb-[0px] max-[480px]:h-[148px]">
+
+
             <img class="absolute bottom-0 right-0 size-[50px]
             max-[767px]:size-[30px]
             max-[480px]:bottom-[0px] max-[480px]:right-[0px] max-[480px]:size-[20px]" src="./Asstes/Polygon 2.png" alt="non">
+        
+            SECOND ZONE
             <div class="w-3/4 px-10 py-16 rounded-lg relative
             max-[767px]:w-[90%] max-[767px]:py-[0px] max-[767px]:h-[125px]
             max-[480px]:w-[90%] max-[480px]:py-[0px] max-[480px]:h-[125px]" style="background-image: linear-gradient(54deg,#eef2f4 0%, #7366e9 40%, #dc4bf4 68%);">
+
                 <img class="absolute bottom-[-20px] left-[-28px] size-[50px]
                 max-[767px]:bottom-[-11px] max-[767px]:left-[-8px] max-[767px]:size-[30px]
                 max-[480px]:bottom-[-11px] max-[480px]:left-[-8px] max-[480px]:size-[20px]" src="./Asstes/Polygon 1.png" alt="non2">
+
                 <img class="absolute top-[47px] left-[379px] size-[50px]
                 max-[767px]:top-[12px] max-[767px]:left-[151px] max-[767px]:size-[30px]
                 max-[480px]:top-[12px] max-[480px]:left-[151px] max-[480px]:size-[20px]" src="./Asstes/Polygon 1.png" alt="non3">
-                <div class="flex flex-col relative items-center font-[Righteous] font-medium text-white py-4 
+
+                THIRD ZONE
+                <div class="flex flex-col relative items-center font-[Righteous] font-medium text-white py-4 bg-[lime]
                 max-[480px]:h-[125px]">
+                    CORNER IMAGE SECTION
                     <img class="absolute top-0 left-0 size-12
                     max-[480px]:size-[20px] max-[480px]:top-[21px] max-[480px]:left-[-24px]" src="./Asstes/Ellipse1.png" alt="Ellipse1">
                     <img class="absolute top-20 left-20 size-12
@@ -554,12 +213,15 @@ h1, h2, h3, h4, h5, h6, p {
                     max-[480px]:size-[20px] max-[480px]:top-[53px] max-[480px]:right-[0px]" src="./Asstes/Ellipse5.png" alt="Ellipse5">
                     <img class="absolute bottom-0 right-6 size-12
                     max-[480px]:size-[20px] max-[480px]:bottom-[21px] max-[480px]:right-[-16px]" src="./Asstes/Ellipse6.png" alt="Ellipse6">
+                    HEADING SECTION
                     <div class="w-96 text-center text-3xl mb-6 max-[480px]:w-[auto] max-[480px]:text-[12px] max-[480px]:mb-[0px] max-[480px]:w-[20px]">
                         <h1 class="max-[480px]:leading-[20px]">Subscribe For Get Update Every New Courses</h1>
                     </div>
+                    SUB HEADING SECTION
                     <div class="w-96 text-center text-xs mb-6 max-[480px]:text-[10px] max-[480px]:mb-[10px] max-[480px]:w-[200px] ">
                         <p>20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
                     </div>
+                    SUBSCRIBE BUTTON
                     <div class="w-96 h-10 flex justify-between items-center backdrop-blur-[500px] rounded-md pl-2 text-xs
                     max-[480px]:w-[170px] max-[480px]:h-[20px] max-[480px]:pl-[7px] max-[480px]:text-[7px] max-[480px]:items-center max-[480px]:rounded-[7px]">
                         <input class="w-80 px-2 h-[30px] bg-transparent max-[480px]:w-[150px] outline-none placeholder:text-[#FFFFFF] max-[480px]:h-[10px] max-[480px]:px-[0px]" type="email" placeholder="enter your email"/>
@@ -568,16 +230,47 @@ h1, h2, h3, h4, h5, h6, p {
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Video Section -->
-    <section class="px-20 pb-20 max-[480px]:px-[10px] max-[480px]:pb-[20px] flex justify-center">
-        <div class="w-3/4 max-[480px]:w-[75%] relative grid">
-            <img class="rounded-2xl" src="./Asstes/video.png" alt="video">
-            <img class="cursor-pointer absolute justify-self-center self-center max-[480px]:size-[66px]" src="./Asstes/play button.png" alt="play button">
-            <img class="absolute -bottom-4 -right-28 max-[480px]:bottom-[0px] max-[480px]:right-[-6px] max-[480px]:size-[50px]" src="./Asstes/video banner.png" alt="video banner">
+
+
+
+subscribe section two
+    <section class="px-[80px] py-[80px]">
+        <div class="px-[100px] pt-[40px] pb-[90px] relative">
+            <img class="absolute bottom-[0px] right-[0px] size-[70px]" src="./Asstes/Polygon 2.png" alt="">
+            <div class="flex flex-col h-[300px] relative text-white justify-center text-center items-center rounded-lg font-[Righteous]" style="background-image: linear-gradient(54deg,#eef2f4 0%, #7366e9 40%, #dc4bf4 68%);">
+                <img class="size-[50px] absolute top-[33px] left-[45px]" src="./Asstes/Ellipse1.png" alt="">
+                <img class="size-[50px] absolute top-[120px] left-[100px]" src="./Asstes/Ellipse2.png" alt="">
+                <img class="size-[50px] absolute bottom-[33px] left-[45px]" src="./Asstes/Ellipse3.png" alt="">
+                <img class="size-[50px] absolute top-[33px] right-[45px]" src="./Asstes/Ellipse4.png" alt="">
+                <img class="size-[50px] absolute top-[120px] right-[100px]" src="./Asstes/Ellipse5.png" alt="">
+                <img class="size-[50px] absolute bottom-[33px] right-[45px]" src="./Asstes/Ellipse6.png" alt="">
+                <h1 class="text-[35px] mb-[15px] px-[280px] leading-[40px]">Subscribe For Get Update Every New Courses</h1>
+                <p class="text-[12px] mb-[15px]">20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
+                <div class=" px-[5px] py-[5px] text-[12px] flex justify-center items-center">
+                    <input class="w-[245px] h-[45px] pl-[15px] bg-transparent backdrop-blur-[500px] rounded-s-md outline-none placeholder:text-[#FFFFFF]" type="email" placeholder="enter your email">
+                    <button class="w-[123px] h-[45px] bg-[#0E38CD] rounded-e-md">Subscribe</button>
+                </div>
+                <img class="absolute bottom-[-30px] left-[-43px] size-[70px]" src="./Asstes/Polygon 1.png" alt="">
+                <img class="absolute top-[0px] left-[437px] size-[70px]" src="./Asstes/Polygon 1.png" alt="">
+            </div>
         </div>
     </section>
-    <!-- Testimonials Section -->
+
+
+
+
+
+
+    </section> -->
+        <!-- Video Section -->
+        <section class="px-20 pb-20 max-[480px]:px-[10px] max-[480px]:pb-[20px] flex justify-center">
+            <div class="w-3/4 max-[480px]:w-[75%] relative grid">
+                <img class="rounded-2xl" src="./Asstes/video.png" alt="video">
+                <img class="cursor-pointer absolute justify-self-center self-center max-[480px]:size-[66px]" src="./Asstes/play button.png" alt="play button">
+                <img class="absolute -bottom-4 -right-28 max-[480px]:bottom-[0px] max-[480px]:right-[-6px] max-[480px]:size-[50px]" src="./Asstes/video banner.png" alt="video banner">
+            </div>
+        </section>
+            <!-- Testimonials Section -->
     <section class="px-20 py-20 max-[480px]:px-[10px] max-[480px]:py-[10px]"style="background-image: linear-gradient(-180deg,#D9ECFF 100%, #D9ECFF 0%);">
         <div>
             <h3 class="font-[Righteous] text-center text-3xl mb-3 text-blue-800
@@ -690,6 +383,6 @@ h1, h2, h3, h4, h5, h6, p {
         <div>
             <p class="bg-[#2554da] text-center text-white text-xs max-[480px]:text-[7px]">Copyright @ 2023 askmeidentity. All Rights Reserved</p>
         </div>
-    </footer>  
+    </footer> 
 </body>
 </html>

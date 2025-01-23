@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Askme identity</title>
     <link rel="icon" href="./Asstes/logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./style.css">
     <!-- font-family: "Righteous", serif; -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,25 +33,15 @@ h1, h2, h3, h4, h5, h6, p {
 </style>
 <body>
     <!-- Header section -->
-    <header class="flex h-[80px] px-20 
-    max-[767px]:px-[10px] max-[767px]:py-[1%] max-[767px]:h-[auto]
-    max-[480px]:py-[1%] max-[480px]:h-[auto] max-[480px]:px-[5px]">
+    <header class="flex w-full h-[60px] px-[5%] justify-between text-sm">
         <!-- Header Left Section -->
-        <div class="flex items-center w-[20%] 
-        max-[767px]:w-[10%]
-        max-[480px]:w-[10%]">
-            <img class="w-[55%] 
-            max-[767px]:w-[100%] 
-            max-[480px]:w-[100%]" src="./Asstes/logo.png"/>
+        <div class="flex items-center w-4/12 max-lg:w-3/12 max-md:w-4/12 max-sm:w-2/4">
+            <img class="w-1/4 max-lg:w-2/4 max-sm:w-2/4" src="./Asstes/logo.png"/>
         </div>
         <!-- Header Middule Section -->
-        <div class="flex items-center justify-end w-[50%] pr-[15%] 
-        max-[767px]:justify-evenly max-[767px]:pr-[0%] max-[767px]:w-[55%]
-        max-[480px]:justify-evenly max-[480px]:pr-[0%] max-[480px]:w-[50%]">
-            <nav  class="max-[767px]:w-[90%] max-[480px]:w-[90%]">
-                <ul class="flex gap-x-[18%] font-[Righteous] text-[16px]
-                max-[767px]:text-[11px] max-[767px]:gap-x-[0%] max-[767px]:justify-evenly
-                max-[480px]:text-[7px] max-[480px]:gap-x-[0%] max-[480px]:justify-evenly">
+        <div class="grid content-center w-4/12 max-md:w-6/12 max-sm:hidden">
+            <nav  class="">
+                <ul class="flex justify-around self-center font-[Righteous]">
                     <li class="cursor-pointer hover:text-blue-500">Home</li>
                     <li class="cursor-pointer hover:text-blue-500">About</li>
                     <li class="cursor-pointer hover:text-blue-500">Courses</li>
@@ -58,98 +49,60 @@ h1, h2, h3, h4, h5, h6, p {
                 </ul>
             </nav>
         </div>
-        <div class="flex justify-between w-[10%] 
-        max-[767px]:w-[15%] 
-        max-[480px]:w-[20%]">
-            <button type="button"><img class="w-[90%] h-[auto] hover:w-[100%] max-[767px]:w-[65%] max-[767px]:hover:w-[70%] max-[480px]:w-[45%] max-[480px]:hover:w-[50%]" src="./Asstes/cart.png"/></button>
-            <button type="button"><img class="w-[90%] h-[auto] hover:w-[100%] max-[767px]:w-[65%] max-[767px]:hover:w-[70%] max-[480px]:w-[45%] max-[480px]:hover:w-[50%]" src="./Asstes/profile.png"/></button>
-            <button type="button"><img class="w-[90%] h-[auto] hover:w-[100%] max-[767px]:w-[65%] max-[767px]:hover:w-[70%] max-[480px]:w-[45%] max-[480px]:hover:w-[50%]" src="./Asstes/search.png"/></button>
+        <div class="flex justify-between w-1/12 max-lg:w-2/12 max-md:hidden max-sm:hidden">
+            <button type="button"><img class="w-min h-min" src="./Asstes/cart.png"/></button>
+            <button type="button"><img class="w-min h-min" src="./Asstes/profile.png"/></button>
+            <button type="button"><img class="w-min h-min" src="./Asstes/search.png"/></button>
         </div>
         <!-- Header Right Section -->
-        <div class="flex items-center justify-end w-[20%] gap-x-[5%] font-['Saira'] font-medium text-base 
-        max-[767px]:justify-evenly max-[767px]:gap-x-[0%] 
-        max-[490px]:justify-evenly max-[480px]:gap-x-[0%]">
-            <button class=" flex items-center justify-center w-[40%] h-[60%] p-[2%] rounded-md underline underline-offset-[10%] text-[#4A4A4A] 
-            active:text-[#4A4A4A] bg-gradient-to-r hover:from-[#083F9B] hover:to-[#7F56D9] hover:no-underline hover:text-white 
-            max-[767px]:text-[11px] max-[480px]:text-[7px]">Login</button>
-            <button class="flex items-center justify-center w-[40%] h-[60%] p-[2%] rounded-md underline underline-offset-[10%] text-[#4A4A4A] 
-            active:text-[#4A4A4A] bg-gradient-to-r hover:from-[#083F9B] hover:to-[#7F56D9] hover:no-underline hover:text-white 
-            max-[767px]:text-[11px] max-[480px]:text-[7px]">Signup</button>
+        <div class="flex items-center justify-around w-2/12 font-['Saira'] font-medium max-md:w-3/12 max-sm:w-2/4 max-sm:gap-x-4 max-sm:justify-end">
+            <button class="self-center p-2 rounded-md underline underline-offset-[10%] text-[#4A4A4A]">Login</button>
+            <button class="self-center p-2 rounded-md text-white bg-gradient-to-r from-[#083F9B] to-[#7F56D9]">Signup</button>
         </div>
     </header>
     <!-- Hero Section -->
-    <section class="grid grid-cols-2 px-20 pt-[5%] pb-[6%] bg-indigo-700 relative 
-    max-[767px]:grid-cols-1 max-[767px]:px-[5px] max-[767px]:pb-[0px] 
-    max-[480px]:grid-cols-1 max-[480px]:px-[5px] max-[480px]:pb-[0px]" style="background-image: linear-gradient(53deg,#4A16BD 0%, #04016C 100%);">
-        <div class="w-[10%] h-[20%] rounded-full bg-white blur-[72px] overflow-hidden absolute left-[-6%] top-[39%]"></div>
+    <section class="w-full h-[calc(100svh_-_120px)] py-12 grid grid-cols-2 px-[5%] relative max-xl:py-8 max-md:h-[calc(100svh_-_60px)] max-sm:py-0 max-sm:grid-cols-1" style="background-image: linear-gradient(53deg,#4A16BD 0%, #04016C 100%);">
+        <!-- <div class="w-[10%] h-[20%] rounded-full bg-white blur-[72px] overflow-hidden absolute left-[-6%] top-[39%]"></div> -->
         <!-- Hero Left Section-->
-        <div class="flex-col max-[767px]:text-center max-[480px]:text-center">
-            <p class="font-[Righteous] uppercase tracking-[0.25em] text-white text-[12px] mb-[4%] 
-            max-[767px]:text-[13px] max-[767px]:mb-[2%]
-            max-[480px]:text-[8px] max-[480px]:mb-[2%]">Successful coaches are visionaries</p>
-            <h1 class="text-white font-[Righteous] text-[55px] pr-[10%] mb-[6%] leading-[70px] 
-            max-[767px]:text-[23px] max-[767px]:pr-[0%] max-[767px]:leading-[33px] max-[767px]:mb-[2%]
-            max-[480px]:text-[17px] max-[480px]:pr-[0%] max-[480px]:leading-[33px] max-[480px]:mb-[2%]">Good <span class="text-[#0E38CD]">coaching</span> is good teaching & nothing else.</h1>
-            <div class="flex gap-x-[7%] font-[Righteous] mb-[9%] 
-            max-[767px]:gap-x-[8%] max-[767px]:justify-evenly max-[767px]:mb-[5%] 
-            max-[480px]:gap-x-[8%] max-[480px]:justify-evenly max-[480px]:mb-[5%]">
-                <button class="w-[30%] h-[56px] rounded-[8px] text-white text-base underline decoration-[2px] hover:border-white hover:border-[1px] hover:no-underline active:text-[#4A16BD] active:bg-white active:no-underline 
-                max-[767px]:w-[30%] max-[767px]:text-[15px] max-[767px]:h-[45px] 
-                max-[480px]:w-[30%] max-[480px]:text-[12px] max-[480px]:h-[45px]">View Courses</button>
-                <button class="w-[37%] h-[56px] text-base text-white rounded-[8px] underline decoration-[2px] hover:border-white hover:border-[1px] hover:no-underline active:text-[#4A16BD] active:bg-white active:no-underline 
-                max-[767px]:w-[40%]  max-[767px]:text-[15px] max-[767px]:h-[45px] 
-                max-[480px]:w-[40%]  max-[480px]:text-[12px] max-[480px]:h-[45px]">Get Free Consultation</button>
+        <div class="flex flex-col justify-center gap-y-8 text-white max-sm:justify-evenly max-sm:items-center max-sm:gap-0 max-sm:text-center">
+            <p class="font-[Righteous] uppercase tracking-[0.25em] max-xl:text-sm max-lg:text-xs">Successful coaches are visionaries</p>
+            <h1 class="text-white font-[Righteous] text-6xl max-xl:text-5xl max-lg:text-4xl max-md:text-3xl">Good <span class="text-[#0E38CD]">coaching</span> is good teaching & nothing else.</h1>
+            <div class="flex gap-x-8 font-[Righteous] max-lg:gap-x-4 max-md:gap-x-2 max-sm:gap-x-12">
+                <button class="p-2 rounded-[8px] text-white text-base border-[1px] border-white">View Courses</button>
+                <button class="p-2 text-base text-white">Get Free Consultation</button>
             </div>
-            <div class="flex items-center w-[74%] h-14 pr-[1%] pl-[4%] bg-white rounded-[8px] gap-x-[2%] font-[Righteous] 
-            max-[767px]:w-[60%] max-[767px]:h-[40px] max-[767px]:pr-[5px] max-[767px]:pl-[15px] max-[767px]:gap-x-[15px] max-[767px]:justify-between max-[767px]:justify-self-center 
-            max-[480px]:w-[80%] max-[480px]:h-[40px] max-[480px]:pr-[5px] max-[480px]:pl-[15px] max-[480px]:gap-x-[15px] max-[480px]:justify-between max-[480px]:justify-self-center">
-                <input class="w-[72%] h-[60%] outline-none placeholder:text-[#4F547B] 
-                max-[767px]:w-[70%] max-[767px]:text-[15px] 
-                max-[480px]:w-[70%] max-[480px]:text-[12px]" placeholder="What do you want to learn today?" />
-                <button class="w-[28%] h-[80%] flex items-center justify-evenly rounded-[8px] text-white bg-gradient-to-r from-[#083F9B] to-[#7F56D9] active:text-[black] 
-                max-[767px]:w-[26%] max-[767px]:h-[30px] max-[767px]:text-[15px] 
-                max-[480px]:w-[26%] max-[480px]:h-[30px] max-[480px]:text-[12px]">
-                    <img class="w-[20%]" src="./Asstes/search2.png" alt="search">Search
+            <div class="flex items-center w-3/4 p-2 justify-between bg-white rounded-[8px] font-[Righteous] 
+            max-xl:text-[15px] max-md:text-[11.5px] max-lg:w-full max-sm:w-5/6">
+                <input class="p-2 w-3/4 outline-none placeholder:text-[#4F547B]
+                max-md:w-4/6 " placeholder="What do you want to learn today?"/>
+                <button class="p-2 w-1/4 flex items-center justify-evenly rounded-[8px] text-white bg-gradient-to-r from-[#083F9B] to-[#7F56D9]
+                max-md:w-2/6">
+                    <img class="w-min max-xl:w-4" src="./Asstes/search2.png" alt="search">Search
                 </button>
             </div>
         </div>
         <!-- Hero Right Section -->
-        <div class="flex text-white relative justify-end 
-        max-[767px]:justify-normal max-[480px]:justify-normal">
-            <div class="mt-[7%] absolute top-[1%] left-[0%] flex flex-col items-center 
-            max-[767px]:mt-[50px] max-[767px]:top-[2px] 
-            max-[480px]:mt-[50px] max-[480px]:top-[2px]">
-                <div class="h-[35px] w-[1px] bg-[#4883FF] mb-[13px] 
-                max-[767px]:h-[26px] max-[767px]:mb-[8px] 
-                max-[480px]:h-[21px] max-[480px]:mb-[8px]"></div>
-                <div class="p-[7px] bg-[#0094E7] rounded-full max-[767px]:p-[7px] max-[480px]:p-[5px]">
-                    <img class="max-[767px]:w-[6px] max-[480px]:w-[4px]" src="./Asstes/“.png" alt="">
+        <div class="flex text-white font-[Righteous] max-sm:hidden">
+            <div class="flex gap-x-8 w-2/4">
+                <div class="flex flex-col items-center">
+                    <div class="h-[35px] w-[1px] bg-[#4883FF] mb-[13px] max-lg:h-[55px]"></div>
+                    <div class="p-[7px] bg-[#0094E7] rounded-full">
+                        <img class="" src="./Asstes/“.png" alt="">
+                    </div>
+                    <div class="h-[35px] w-[1px] bg-[#4883FF] mt-[13px] max-lg:h-[55px]"></div>
                 </div>
-                <div class="h-[35px] w-[1px] bg-[#4883FF] mt-[13px] 
-                max-[767px]:h-[26px] max-[767px]:mt-[8px]
-                max-[480px]:h-[21px] max-[480px]:mt-[8px]"></div>
+                <div class="flex flex-col gap-y-4 max-lg:gap-y-2">
+                    <h5 class="tracking-[1px] text-[13px]">Shyam</h5>
+                    <p class="text-[11px] tracking-[1px]">In a coaching role, you ask the questions and rely more on your staff, who become the experts, to provide the information.</p>
+                    <p class="font-[Inter] text-[11px] text-[#0094E7]">4.9</p>
+                </div>
             </div>
-            <div class="w-[36%] mt-[7%] font-[Righteous] absolute top-0 left-[7%] 
-            max-[767px]:w-[50%] max-[767px]:mt-[50px] max-[767px]:static max-[767px]:ml-[30px] 
-            max-[480px]:w-[50%] max-[480px]:mt-[50px] ml-[25px] max-[480px]:static">
-                <h5 class="mb-[14px] tracking-[1px] text-[13px] 
-                max-[767px]:text-[14px] max-[767px]:mb-[5px] 
-                max-[480px]:text-[10px] max-[480px]:mb-[5px]">Shyam</h5>
-                <p class="text-[11px] tracking-[1px] text-[Regular] 
-                max-[767px]:text-[11px] 
-                max-[480px]:text-[8px]">In a coaching role, you ask the questions and rely more on your staff, who become the experts, to provide the information.</p>
-                <p class="font-[Inter] text-[11px] mt-[10px] text-[#0094E7] 
-                max-[767px]:text-[9px] max-[767px]:mt-[5px] 
-                max-[480px]:text-[8px] max-[480px]:mt-[5px]">4.9</p>
+            <div class="w-2/4 relative">
+                <img class="w-full object-cover absolute z-10 mix-blend-multiply max-md:bottom-20" src="./Asstes/woman-hugging-laptop 1.png" alt="women">
+                <div class="w-full h-full absolute top-0 z-0 rounded-full bg-[#FFFFFF] blur-[60px] max-md:"></div>
             </div>
-                <img class="w-[59%] mix-blend-multiply absolute z-10 
-                max-[767px]:w-[95px] max-[767px]:right-[53px] max-[767px]:top-[33px] 
-                max-[480px]:w-[95px] max-[480px]:right-[53px] max-[480px]:top-[14px]" src="./Asstes/women.png" alt="women">
-                <div class="w-[80%] h-[125%] rounded-full bg-[#FFFFFF] blur-[100px] absolute z-0 right-[-13%] 
-                max-[767px]:w-[156px] max-[767px]:h-[150px] max-[767px]:ml-[91px] max-[767px]:mt-[33px] max-[767px]:blur-[20px] max-[767px]:static 
-                max-[480px]:w-[100px] max-[480px]:h-[150px] max-[480px]:ml-[31px] max-[480px]:mt-[14px] max-[480px]:blur-[20px] max-[480px]:static"></div>
         </div>
-        <div class="w-[220px] h-[200px] absolute bottom-[0px] left-[42%] flex items-end max-[767px]:hidden max-[480px]:hidden">
+        <div class="w-[220px] h-[200px] absolute bottom-[0px] left-[42%] flex items-end max-lg:hidden">
             <div class="flex relative overflow-hidden">
                 <img class="w-[217px] h-[215px]" src="./Asstes/t1.png" alt="">
                 <div class="w-[186px] h-[287px] border-dashed border-[2px] border-[#7764bc] rounded-full absolute left-[15px] bottom-[-87px]"></div>
@@ -158,268 +111,177 @@ h1, h2, h3, h4, h5, h6, p {
         </div>
     </section>
     <!-- Podcasts section -->
-     <section class="px-20 py-[1%] max-[767px]:px-[10px] max-[480px]:px-[5px]" style="background-image: linear-gradient(53deg,#7E08C7 0%, #6142da 100%);">
-        <div class="flex justify-evenly">
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/spotify.png');">
+     <section class="px-[5%] h-[60px] 
+     max-md:hidden" style="background-image: linear-gradient(53deg,#7E08C7 0%, #6142da 100%);">
+        <div class="flex justify-evenly items-center">
+            <div>
+                <img src="./Asstes/spotify.png" alt="">
             </div>
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/amazon.png');">
+            <div>
+                <img src="./Asstes/amazon.png" alt="">
             </div>
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/cisco.png');">
+            <div>
+                <img src="./Asstes/cisco.png" alt="">
             </div>
-            <div class="bg-no-repeat bg-center bg-contain w-[80px] h-[35px] max-[767px]:w-[48px] max-[767px]:h-[25px] max-[480px]:w-[25px] max-[480px]:h-[12px]" style="background-image: url('./Asstes/logitech.png');">
+            <div>
+                <img src="./Asstes/logitech.png" alt="">
             </div>
         </div>
     </section>
     <!-- Feature Courses Section -->
-    <section class="px-20 max-[767px]:p-[10px] max-[480px]:p-[10px]" style="background-image: linear-gradient(-180deg,#F0F3FF 0%, #D9ECFF 100%);">
-        <div class="mt-[6%] relative max-[767px]:mt-[14px] max-[480px]:mt-[14px]">
-            <img class="absolute w-[6%] left-[4%] top-[7%]" src="./Asstes/Ellipse 118.png" alt="">
-            <h3 class="font-[Righteous] text-center text-[33px] 
-            max-[767px]:text-[18px] max-[480px]:text-[14px]">Featured <span class="text-[#4883FF]">Courses</span></h3>
-            <p class="font-[Righteous] text-center text-[21px] uppercase mb-20 
-            max-[767px]:text-[12px] max-[767px]:mb-[30px] 
-            max-[480px]:text-[8px] max-[480px]:mb-[30px] ">The feature courses are we invented our teaching part</p>
+    <section class="px-[5%] py-12" style="background-image: linear-gradient(-180deg,#F0F3FF 0%, #D9ECFF 100%);">
+        <div class="relative">
+            <img class="absolute w-[6%] left-0 top-0" src="./Asstes/Ellipse 118.png" alt="">
+            <h3 class="font-[Righteous] text-center text-4xl">Featured <span class="text-[#4883FF]">Courses</span></h3>
+            <p class="font-[Righteous] text-center text-lg uppercase mb-20">The feature courses are we invented our teaching part</p>
         </div>
     <!-- Cart Section -->
-    <div class="grid grid-cols-3 gap-8 mb-16 font-[Saira] 
-    max-[767px]:grid-cols-2 max-[767px]:mb-[44px] 
-    max-[480px]:grid-cols-2 max-[480px]:mb-[44px]">
+    <div class="grid grid-cols-4 gap-8 my-12 font-[Saira] max-lg:grid-cols-3 max-sm:grid-cols-2">
         <!-- Cart One -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
+        <div class="bg-white rounded-xl">
             <div>
                 <img class="rounded-t-xl" src="./Asstes/cart1.png" alt="cart1">
             </div>
-            <div class="px-3.5 py-3.5 max-[767px]:px-[14px] max-[767px]:py-[14px] max-[480px]:px-[14px] max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
+            <div class="px-3.5 py-3.5 flex flex-col gap-y-4">
+                <div class="flex justify-between text-xs">
                     <p class="cursor-pointer">1,957 Students</p>
                     <p class="cursor-pointer">01h 59m</p>
                 </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
+                <div class="font-semibold">
                     <h4 class="cursor-pointer">Motion Graphics: Create a Nice Typography Animation</h4>
                 </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
+                <div class="flex justify-between font-semibold text-sm">
                     <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px]
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
+                    <img class="cursor-pointer" src="./Asstes/cart 2.png" alt="">
                 </div>
             </div>
         </div>
         <!-- Cart Two -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
+        <div class="bg-white rounded-xl">
             <div>
                 <img class="rounded-t-xl" src="./Asstes/cart2.png" alt="cart1">
             </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px]
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
+            <div class="px-3.5 py-3.5 flex flex-col gap-y-4">
+                <div class="flex justify-between text-xs">
                     <p class="cursor-pointer">9,575 Students</p>
                     <p class="cursor-pointer">01h 59m</p>
                 </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px]
-                max-[480px]:mt-[0px] max-[480px]:text-[10px] ">
-                    <h4 class="cursor-pointer">Motion Graphics: Create a Nice Typography Animation</h4>
+                <div class="font-semibold">
+                    <h4 class="cursor-pointer">Advance PHP knowledge with JS to make smart web</h4>
                 </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
+                <div class="flex justify-between font-semibold text-sm">
                     <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px]
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
+                    <img class="cursor-pointer" src="./Asstes/cart 2.png" alt="">
                 </div>
             </div>
         </div>
         <!-- Cart Three -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
+        <div class="bg-white rounded-xl">
             <div>
                 <img class="rounded-t-xl" src="./Asstes/cart3.png" alt="cart1">
             </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px] 
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
+            <div class="px-3.5 py-3.5 flex flex-col gap-y-4">
+                <div class="flex justify-between text-xs">
                     <p class="cursor-pointer">2957 Students</p>
                     <p class="cursor-pointer">02h 49m</p>
                 </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
+                <div class="font-semibold">
                     <h4 class="cursor-pointer">Education Software and PHP and JS System Script</h4>
                 </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
+                <div class="flex justify-between font-semibold text-sm">
                     <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
+                    <img class="cursor-pointer" src="./Asstes/cart 2.png" alt="">
                 </div>
             </div>
         </div>
         <!-- Cart Four -->
-        <div class="bg-white rounded-xl 
-        max-[767px]:h-[320px] 
-        max-[480px]:h-[228px]">
+        <div class="bg-white rounded-xl">
             <div>
                 <img class="rounded-t-xl" src="./Asstes/cart4.png" alt="cart1">
             </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px] 
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
+            <div class="px-3.5 py-3.5 flex flex-col gap-y-4">
+                <div class="flex justify-between text-xs">
                     <p class="cursor-pointer">5,457 Students</p>
                     <p class="cursor-pointer">01h 49m</p>
                 </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px]
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
+                <div class="font-semibold">
                     <h4 class="cursor-pointer">The Complete Financial Analyst Training & Investing</h4>
                 </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
+                <div class="flex justify-between font-semibold text-sm">
                     <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="">
+                    <img class="cursor-pointer" src="./Asstes/cart 2.png" alt="">
                 </div>
             </div>
         </div>
         <!-- Cart Five -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
+        <div class="bg-white rounded-xl">
             <div>
-                <img class="rounded-t-xl" src="./Asstes/cart5.png" alt="cart5">
+                <img class="rounded-t-xl" src="./Asstes/cart5.png" alt="cart1">
             </div>
-            <div class="px-3.5 py-3.5 max-[767px]:px-[14px] max-[767px]:py-[14px] max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px] ">
+            <div class="px-3.5 py-3.5 flex flex-col gap-y-4">
+                <div class="flex justify-between text-xs">
                     <p class="cursor-pointer">595 Students</p>
                     <p class="cursor-pointer">01h 49m</p>
                 </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
+                <div class="font-semibold">
                     <h4 class="cursor-pointer">Marketing 2023: Complete Guide To Instagram Growth</h4>
                 </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
+                <div class="flex justify-between font-semibold text-sm">
                     <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="cart">
+                    <img class="cursor-pointer" src="./Asstes/cart 2.png" alt="">
                 </div>
             </div>
         </div>
         <!-- Cart Six -->
-        <div class="bg-white rounded-xl max-[767px]:h-[320px] max-[480px]:h-[228px]">
+        <div class="bg-white rounded-xl">
             <div>
-                <img class="rounded-t-xl" src="./Asstes/cart6.png" alt="cart6">
+                <img class="rounded-t-xl" src="./Asstes/cart6.png" alt="cart1">
             </div>
-            <div class="px-3.5 py-3.5 
-            max-[767px]:px-[14px] max-[767px]:py-[14px] 
-            max-[480px]:py-[14px]">
-                <div class="flex justify-between font-medium text-xs mt-2 mb-4 
-                max-[767px]:text-[10px] max-[767px]:mt-[0px] max-[767px]:mb-[6px] 
-                max-[480px]:text-[7px] max-[480px]:mt-[0px] max-[480px]:mb-[6px]">
+            <div class="px-3.5 py-3.5 flex flex-col gap-y-4">
+                <div class="flex justify-between text-xs">
                     <p class="cursor-pointer">458 Students</p>
                     <p class="cursor-pointer">03h 00m</p>
                 </div>
-                <div class="font-semibold mb-6 
-                max-[767px]:mt-[0px] max-[767px]:text-[13px] 
-                max-[480px]:mt-[0px] max-[480px]:text-[10px]">
+                <div class="font-semibold">
                     <h4 class="cursor-pointer">Learn 3D Modelling and Design for Beginners</h4>
                 </div>
-                <div class="flex justify-between font-semibold text-sm max-[767px]:text-[12px] max-[480px]:text-[9px]">
+                <div class="flex justify-between font-semibold text-sm">
                     <p class="cursor-pointer">Rs.499</p>
-                    <img class="cursor-pointer 
-                    max-[767px]:w-[20px] max-[767px]:h-[20px] 
-                    max-[480px]:w-[18px] max-[480px]:h-[18px]" src="./Asstes/cart 2.png" alt="cart">
+                    <img class="cursor-pointer" src="./Asstes/cart 2.png" alt="">
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex justify-center pb-16 max-[767px]:pb-[36px] max-[480px]:pb-[36px]">
-        <button class="px-4 py-2 font-[Righteous] text-white rounded-lg min-w-24 border-[2px] bg-gradient-to-r from-[#083F9B] to-[#7F56D9] bg-gradient-to-r hover:from-[#FFFFFF] hover:to-[#FFFFFF] hover:border-[#083F9B] hover:text-blue-500 active:text-white bg-gradient-to-r active:from-[#083F9B] active:to-[#7F56D9] 
-        max-[767pxpx]:px-[12px] max-[767px]:py-[4px] max-[767px]:text-[10px] 
-        max-[480px]:px-[12px] max-[480px]:py-[4px] max-[480px]:text-[10px]">Explore courses</button>
+    <div class="flex justify-center">
+        <button class="px-4 py-2 font-[Righteous] text-white rounded-lg min-w-24 border-[2px] bg-gradient-to-r from-[#083F9B] to-[#7F56D9]">Explore courses</button>
     </div>
     </section>
     <!-- Our Courses Explanetion Section-->
-    <section class="px-20 py-20 relative overflow-hidden 
-    max-[767px]:px-[10px] max-[767px]:py-[10px]
-    max-[480px]:px-[10px] max-[480px]:py-[10px] text-white" style="background-image: linear-gradient(-131deg, #1660db 0%,#9c9ced 100%);">  
+    <section class="flex flex-col justify-center px-[20%] py-12 relative overflow-hidden text-white gap-y-12 max-lg:px-[10%] max-md:px-[5%]" style="background-image: linear-gradient(-131deg, #1660db 0%,#9c9ced 100%);">  
     <div class="text-center">
-        <h4 class="font-[Righteous] text-3xl mb-4 
-        max-[767px]:text-[24px] max-[767px]:mb-[8px] 
-        max-[480px]:text-[20px] max-[480px]:mb-[6px]">Why <span class="text-[#0E38CD]">learn</span> with our courses?</h4>
-        <p class="font-[Saira] text-base mb-20 
-        max-[767px]:text-[14px] max-[767px]:mb-[14px] 
-        max-[480px]:text-[12px] max-[480px]:mb-[10px]">We are providing the best courses and top classes.And extradinery placement training.....</p>
+        <h4 class="font-[Righteous] text-3xl">Why <span class="text-[#0E38CD]">learn</span> with our courses?</h4>
+        <p class="font-[Saira] text-base">We are providing the best courses and top classes.And extradinery placement training.....</p>
     </div>
-        <div class="flex justify-center flex-wrap">
-            <div class="flex flex-col items-center relative w-96 font-[Righteous] 
-            max-[767px]:flex-row max-[767px]:w-[340px] max-[767px]:pb-[35px] max-[767px]:mb-[35px] max-[767px]:mr-[17px] max-[767px]:ml-[17px] 
-            max-[480px]:flex-row max-[480px]:w-[253px] max-[480px]:pb-[35px] max-[480px]:mb-[35px]">
-                <img class="mb-4 
-                max-[767px]:w-[75px] max-[767px]:mb-[0px] 
-                max-[480px]:w-[63px] max-[480px]:mb-[0px]" src="./Asstes/learn.png" alt="learn">
-                <div class="max-[480px]:flex-row  
-                max-[767px]:flex-row max-[767px]:px-[10px] 
-                max-[480px]:px-[10px]">
-                    <h4 class="text-center text-lg mb-2 cursor-pointer 
-                    max-[767px]:text-start max-[767px]:mb-[4px] max-[767px]:text-[20px] 
-                    max-[480px]:text-start max-[480px]:mb-[4px] max-[480px]:text-[15px]">01. Learn</h4>
-                    <p class="text-center text-sm px-16 
-                    max-[767px]:leading-[15px] max-[767px]:text-start max-[767px]:mb-[8px] max-[767px]:text-[16px] max-[767px]:px-[0px] 
-                    max-[480px]:leading-[13px] max-[480px]:text-start max-[480px]:mb-[8px] max-[480px]:text-[10px] max-[480px]:px-[0px]">Learn continually. There is always “one more thing”to learn.</p>
-                </div>
-                <img class="h-[174px] absolute right-[0px] 
-                max-[767px]:h-[324px] max-[767px]:-rotate-90 max-[767px]:mb-[-131px] max-[767px]:left-[167px] 
-                max-[480px]:h-[220px] max-[480px]:-rotate-90 max-[480px]:mb-[-131px] max-[480px]:left-[114px]" src="./Asstes/doted line.png" alt="">
+        <div class="flex font-[Righteous] gap-8 text-center max-sm:flex-col">
+            <div class="w-1/3 p-2 flex flex-col items-center gap-y-2 relative overflow-hidden max-sm:w-full">
+                <img class="w-20" src="./Asstes/learn.png" alt="learn">
+                <h4 class="text-lg cursor-pointer">01. Learn</h4>
+                <p class="text-sm">Learn continually. There is always “one more thing”to learn.</p>
+                <img class="absolute right-0 max-sm:hidden" src="./Asstes/doted line.png" alt="">
             </div>
-            <div class="flex flex-col items-center relative w-96 font-[Righteous] 
-            max-[767px]:flex-row max-[767px]:w-[340px] max-[767px]:pb-[35px] max-[767px]:mb-[35px] max-[767px]:mr-[17px] max-[767px]:ml-[17px] 
-            max-[480px]:flex-row max-[480px]:w-[253px] max-[480px]:pb-[35px] max-[480px]:mb-[35px]">
-                <img class="mb-4 max-[480px]:w-[63px] 
-                max-[767px]:w-[75px] max-[767px]:mb-[0px]
-                max-[480px]:mb-[0px]" src="./Asstes/graduate.png" alt="learn">
-                <div class="max-[767px]:flex-row max-[767px]:px-[10px] max-[480px]:flex-row max-[480px]:px-[10px]">
-                    <h4 class="text-center text-lg cursor-pointer 
-                    max-[767px]:text-start max-[767px]:mb-[4px] max-[767px]:text-[20px] 
-                    max-[480px]:text-start max-[480px]:mb-[4px] max-[480px]:text-[15px]">02. Graduate</h4>
-                    <p class="text-center text-sm px-16 
-                    max-[767px]:leading-[15px] max-[767px]:text-start max-[767px]:mb-[8px] max-[767px]:text-[16px] max-[767px]:px-[0px]
-                    max-[480px]:leading-[13px] max-[480px]:text-start max-[480px]:mb-[8px] max-[480px]:text-[10px] max-[480px]:px-[0px]">Be bold,be courageous, be your best.</p>
-                </div>
-                <img class="h-[174px] absolute right-[0px] 
-                max-[767px]:h-[324px] max-[767px]:-rotate-90 max-[767px]:mb-[-131px] max-[767px]:left-[167px] 
-                max-[480px]:h-[220px] max-[480px]:-rotate-90 max-[480px]:mb-[-131px] max-[480px]:left-[114px] " src="./Asstes/doted line.png" alt="">
+            <div class="w-1/3 p-2 flex flex-col items-center gap-y-2 relative overflow-hidden max-sm:w-full">
+                <img class="" src="./Asstes/graduate.png" alt="learn">
+                <h4 class="text-lg cursor-pointer">02. Graduate</h4>
+                <p class="text-sm">Be bold,be courageous, be your best.</p>
+                <img class="absolute right-0 max-sm:hidden" src="./Asstes/doted line.png" alt="">
             </div>
-            <div class="flex flex-col items-center w-96 font-[Righteous] border-dashed 
-            max-[767px]:flex-row max-[767px]:w-[340px] max-[767px]:pb-[35px] max-[767px]:mb-[35px] max-[767px]:mr-[17px] max-[767px]:ml-[17px] 
-            max-[480px]:flex-row max-[480px]:w-[253px] max-[480px]:pb-[10px] max-[480px]:border-b-0">
-                <img class="mb-4 
-                max-[767px]:w-[75px] max-[767px]:mb-[0px] 
-                max-[480px]:w-[63px] max-[480px]:mb-[0px]" src="./Asstes/work.png" alt="learn">
-                <div class="max-[767px]:flex-row max-[767px]:px-[10px] max-[480px]:flex-row max-[480px]:px-[10px] ">
-                    <h4 class="text-center text-lg cursor-pointer 
-                    max-[767px]:text-start max-[767px]:mb-[4px] max-[767px]:text-[20px] 
-                    max-[480px]:text-start max-[480px]:mb-[4px] max-[480px]:text-[15px]">03. Work</h4>
-                    <p class="text-center text-sm px-16 
-                    max-[767px]:leading-[15px] max-[767px]:text-start max-[767px]:mb-[8px] max-[767px]:text-[16px] max-[767px]:px-[0px]
-                    max-[480px]:leading-[13px] max-[480px]:text-start max-[480px]:mb-[8px] max-[480px]:text-[10px] max-[480px]:px-[0px]">Great companies are built in the office,with hard work put in by team.</p>
-                </div>
+            <div class="w-1/3 p-2 flex flex-col items-center gap-y-2 max-sm:w-full">
+                <img class="" src="./Asstes/work.png" alt="learn">
+                <h4 class="text-lg cursor-pointer">03. Work</h4>
+                <p class="text-sm">Great companies are built in the office,with hard work put in by team.</p>
             </div>
         </div>
-        <div class="w-[220px] h-[200px] absolute top-[55px] left-[-5%] flex items-end rotate-90 
-        max-[767px]:hidden max-[480px]:hidden ">
+        <div class="w-[220px] h-[200px] absolute top-[55px] left-[-5%] flex items-end rotate-90 max-md:hidden">
             <div class="flex relative overflow-hidden">
                 <img class="w-[217px] h-[215px]" src="./Asstes/t1.png" alt="">
                 <div class="w-[186px] h-[287px] border-dashed border-[2px] border-[#95a1e9] rounded-full absolute left-[15px] bottom-[-87px]"></div>
@@ -428,267 +290,192 @@ h1, h2, h3, h4, h5, h6, p {
         </div>  
     </section>
     <!-- Categories Section -->
-    <section class="px-[80px] py-[80px] 
-    max-[767px]:px-[10px] max-[767px]:py-[14px] 
-    max-[480px]:px-[10px] max-[480px]:py-[14px]" style="background-image: linear-gradient(-180deg,#D9ECFF 100%, #D9ECFF 0%);">
-        <h3 class="font-[Righteous] text-center text-5xl mb-3
-        max-[767px]:text-[22px] max-[767px]:mb-[6px] 
-        max-[480px]:text-[16px] max-[480px]:mb-[4px]">Top <span class="text-blue-800">Categories</span></h3>
-        <p class="font-[Righteous] text-center text-md mb-20
-        max-[767px]:text-[16px] max-[767px]:mb-[35px] 
-        max-[480px]:text-[10px] max-[480px]:mb-[20px]">100+ unique online course list designs</p>
+    <section class="px-[5%] py-12 text-center font-[Righteous]" style="background-image: linear-gradient(-180deg,#D9ECFF 100%, #D9ECFF 0%);">
+        <h3 class="text-5xl">Top <span class="text-blue-800">Categories</span></h3>
+        <p class="text-md">100+ unique online course list designs</p>
         <!-- Cart Section -->
-        <div class="grid grid-cols-6 gap-x-4 font-[Righteous] 
-        max-[767px]:grid-cols-3 max-[767px]:justify-evenly 
-        max-[480px]:grid-cols-3">
+        <div class="grid grid-cols-6 gap-8 py-12 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2">
             <!-- Cart One -->
-            <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
-            max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
-            max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
-                <img class="size-16 
-                max-[767px]:size-13 
-                max-[480px]:size-14" src="./Asstes/box-image1.png" alt="Digital Marketing">
-                <h1 class="cursor-pointer text-base text-center 
-                max-[767px]:text-[13px] 
-                max-[480px]:text-[11px]">Digtal Marketing</h1>
-                <p class="cursor-pointer text-xs max-[767px]:text-[11px] max-[480px]:text-[9px]">25 Courses</p>
+            <div class="bg-white flex flex-col gap-8 p-6 items-center rounded-lg">
+                <img class="size-18" src="./Asstes/box-image1.png" alt="Digital Marketing">
+                <h1 class="cursor-pointer text-base text-center">Digtal Marketing</h1>
+                <p class="cursor-pointer text-xs">25 Courses</p>
             </div>
             <!-- Cart Two -->
-            <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
-            max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px]
-            max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
-                <img class="size-16 
-                max-[767px]:size-13
-                max-[480px]:size-14" src="./Asstes/box-image2.png" alt="Web Development">
-                <h1 class="cursor-pointer text-base text-center 
-                max-[767px]:text-[13px]
-                max-[480px]:text-[11px]">Web Development</h1>
-                <p class="cursor-pointer text-xs max-[767px]:text-[11px] max-[480px]:text-[9px]">16 Courses</p>
+            <div class="bg-white flex flex-col gap-8 p-6 items-center rounded-lg">
+                <img class="size-18" src="./Asstes/box-image2.png" alt="Digital Marketing">
+                <h1 class="cursor-pointer text-base text-center">Web Development</h1>
+                <p class="cursor-pointer text-xs">16 Courses</p>
             </div>
             <!-- Cart Three -->
-            <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
-            max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
-            max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
-                <img class="size-16 
-                max-[767px]:size-13 
-                max-[480px]:size-14" src="./Asstes/box-image3.png" alt="Art & Humanities">
-                <h1 class="cursor-pointer text-base text-center 
-                max-[767px]:text-[13px]
-                max-[480px]:text-[11px]">Art & Humanities</h1>
-                <p class="cursor-pointer text-xs max-[767px]:text-[11px] max-[480px]:text-[9px]">76 Courses</p>
+            <div class="bg-white flex flex-col gap-8 p-6 items-center rounded-lg">
+                <img class="size-18" src="./Asstes/box-image3.png" alt="Digital Marketing">
+                <h1 class="cursor-pointer text-base text-center">Art & Humanities</h1>
+                <p class="cursor-pointer text-xs">76 Courses</p>
             </div>
-            <!-- Cart Four -->
-            <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
-            max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
-            max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
-                <img class="size-16 
-                max-[767px]:size-13 
-                max-[480px]:size-14" src="./Asstes/box-image4.png" alt="Personal Development">
-                <h1 class="cursor-pointer text-base text-center 
-                max-[767px]:text-[13px] max-[767px]:leading-[10px]
-                max-[480px]:text-[11px] max-[480px]:leading-[10px]">Personal Development</h1>
-                <p class="cursor-pointer text-xs 
-                max-[767px]:text-[11px]
-                max-[480px]:text-[9px]">22 Courses</p>
+            <!-- Cart four -->
+            <div class="bg-white flex flex-col gap-8 p-6 items-center rounded-lg">
+                <img class="size-18" src="./Asstes/box-image4.png" alt="Digital Marketing">
+                <h1 class="cursor-pointer text-base text-center">Personal Development</h1>
+                <p class="cursor-pointer text-xs">22 Courses</p>
             </div>
-            <!-- Cart Five -->
-            <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
-            max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
-            max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
-                <img class="size-16 
-                max-[767px]:size-13 
-                max-[480px]:size-14" src="./Asstes/box-image5.png" alt="IT & Software">
-                <h1 class="cursor-pointer text-base text-center
-                max-[767px]:text-[13px]
-                max-[480px]:text-[11px]">IT & Software</h1>
-                <p class="cursor-pointer text-xs 
-                max-[767px]:text-[11px]
-                max-[480px]:text-[9px]">110 Courses</p>
+            <!-- Cart five -->
+            <div class="bg-white flex flex-col gap-8 p-6 items-center rounded-lg">
+                <img class="size-18" src="./Asstes/box-image6.png" alt="Digital Marketing">
+                <h1 class="cursor-pointer text-base text-center">IT and Software</h1>
+                <p class="cursor-pointer text-xs">110 Courses</p>
             </div>
-            <!-- Cart Six -->
-            <div class="bg-white px-6 py-4 flex flex-col gap-y-8 items-center rounded-lg 
-            max-[767px]:px-[5px] max-[767px]:py-[10px] max-[767px]:gap-y-[3px] max-[767px]:h-[auto] max-[767px]:mb-[15px] 
-            max-[480px]:px-[5px] max-[480px]:py-[5px] max-[480px]:gap-y-[5px] max-[480px]:h-[114px] max-[480px]:mb-[12px]">
-                <img class="size-16 
-                max-[767px]:size-13 
-                max-[480px]:size-14" src="./Asstes/box-image6.png" alt="Graphik Design">
-                <h1 class="cursor-pointer text-base text-center 
-                max-[767px]:text-[13px]
-                max-[480px]:text-[11px]">Graphik Design</h1>
-                <p class="cursor-pointer text-xs 
-                max-[767px]:text-[11px]
-                max-[480px]:text-[9px]">85 Courses</p>
+            <!-- Cart six -->
+            <div class="bg-white flex flex-col gap-8 p-6 items-center rounded-lg">
+                <img class="size-18" src="./Asstes/box-image5.png" alt="Digital Marketing">
+                <h1 class="cursor-pointer text-base text-center">Graphic Design</h1>
+                <p class="cursor-pointer text-xs">85 Courses</p>
             </div>
         </div>
     </section>
     <!-- Subscribe Section -->
-    <section class="px-20 py-20 
-    max-[767px]:px-[5px] max-[767px]:py-[10px]
-    max-[480px]:px-[5px] max-[480px]:py-[10px]">
-        <div class="flex pb-[127px] justify-center relative 
-        max-[767px]:pb-[0px] max-[767px]:h-[148px]
-        max-[480px]:pb-[0px] max-[480px]:h-[148px]">
-            <img class="absolute bottom-0 right-0 size-[50px]
-            max-[767px]:size-[30px]
-            max-[480px]:bottom-[0px] max-[480px]:right-[0px] max-[480px]:size-[20px]" src="./Asstes/Polygon 2.png" alt="non">
-            <div class="w-3/4 px-10 py-16 rounded-lg relative
-            max-[767px]:w-[90%] max-[767px]:py-[0px] max-[767px]:h-[125px]
-            max-[480px]:w-[90%] max-[480px]:py-[0px] max-[480px]:h-[125px]" style="background-image: linear-gradient(54deg,#eef2f4 0%, #7366e9 40%, #dc4bf4 68%);">
-                <img class="absolute bottom-[-20px] left-[-28px] size-[50px]
-                max-[767px]:bottom-[-11px] max-[767px]:left-[-8px] max-[767px]:size-[30px]
-                max-[480px]:bottom-[-11px] max-[480px]:left-[-8px] max-[480px]:size-[20px]" src="./Asstes/Polygon 1.png" alt="non2">
-                <img class="absolute top-[47px] left-[379px] size-[50px]
-                max-[767px]:top-[12px] max-[767px]:left-[151px] max-[767px]:size-[30px]
-                max-[480px]:top-[12px] max-[480px]:left-[151px] max-[480px]:size-[20px]" src="./Asstes/Polygon 1.png" alt="non3">
-                <div class="flex flex-col relative items-center font-[Righteous] font-medium text-white py-4 
-                max-[480px]:h-[125px]">
-                    <img class="absolute top-0 left-0 size-12
-                    max-[480px]:size-[20px] max-[480px]:top-[21px] max-[480px]:left-[-24px]" src="./Asstes/Ellipse1.png" alt="Ellipse1">
-                    <img class="absolute top-20 left-20 size-12
-                    max-[480px]:size-[20px] max-[480px]:top-[53px] max-[480px]:left-[0px]" src="./Asstes/Ellipse2.png" alt="Ellipse2">
-                    <img class="absolute bottom-0 left-6 size-12
-                    max-[480px]:size-[20px] max-[480px]:bottom-[21px] max-[480px]:left-[-16px]" src="./Asstes/Ellipse3.png" alt="Ellipse3">
-                    <img class="absolute top-0 right-0 size-12
-                    max-[480px]:size-[20px] max-[480px]:top-[21px] max-[480px]:right-[-24px]" src="./Asstes/Ellipse4.png" alt="Ellipse4">
-                    <img class="absolute top-20 right-20 size-12
-                    max-[480px]:size-[20px] max-[480px]:top-[53px] max-[480px]:right-[0px]" src="./Asstes/Ellipse5.png" alt="Ellipse5">
-                    <img class="absolute bottom-0 right-6 size-12
-                    max-[480px]:size-[20px] max-[480px]:bottom-[21px] max-[480px]:right-[-16px]" src="./Asstes/Ellipse6.png" alt="Ellipse6">
-                    <div class="w-96 text-center text-3xl mb-6 max-[480px]:w-[auto] max-[480px]:text-[12px] max-[480px]:mb-[0px] max-[480px]:w-[20px]">
-                        <h1 class="max-[480px]:leading-[20px]">Subscribe For Get Update Every New Courses</h1>
+    <section class="px-[5%] py-20 max-lg:pt-8 max-sm:px-0 max-sm:py-0 ">
+        <div class="flex pb-[127px] justify-center relative max-lg:pb-[87px] max-md:pb-0">
+            <img class="absolute bottom-0 right-0 size-[50px] max-md:hidden" src="./Asstes/Polygon 2.png" alt="non">
+            <div class="w-3/4 px-10 py-16 rounded-lg relative max-lg:w-5/6 max-lg:py-8 max-md:w-full" style="background-image: linear-gradient(54deg,#eef2f4 0%, #7366e9 40%, #dc4bf4 68%);">
+                <img class="absolute bottom-[-20px] left-[-28px] size-[50px] max-md:hidden" src="./Asstes/Polygon 1.png" alt="non2">
+                <img class="absolute top-[47px] left-[379px] size-[50px] max-lg:left-[300px] max-lg:top-[17px] max-md:hidden" src="./Asstes/Polygon 1.png" alt="non3">
+                <div class="flex flex-col gap-y-9 relative items-center font-[Righteous] font-medium text-white py-4">
+                    <img class="absolute top-0 left-0 size-12 max-md:size-10 max-sm:hidden" src="./Asstes/Ellipse1.png" alt="Ellipse1">
+                    <img class="absolute top-20 left-20 size-12 max-md:size-10 max-md:left-8 max-sm:hidden" src="./Asstes/Ellipse2.png" alt="Ellipse2">
+                    <img class="absolute bottom-0 left-6 size-12 max-md:size-10 max-md:left-0 max-sm:hidden" src="./Asstes/Ellipse3.png" alt="Ellipse3">
+                    <img class="absolute top-0 right-0 size-12 max-md:size-10 max-sm:hidden" src="./Asstes/Ellipse4.png" alt="Ellipse4">
+                    <img class="absolute top-20 right-20 size-12 max-md:size-10 max-md:right-8 max-sm:hidden" src="./Asstes/Ellipse5.png" alt="Ellipse5">
+                    <img class="absolute bottom-0 right-6 size-12 max-md:size-10 max-md:right-0 max-sm:hidden" src="./Asstes/Ellipse6.png" alt="Ellipse6">
+                    <div class="w-96 text-center text-3xl">
+                        <h1 class="">Subscribe For Get Update Every New Courses</h1>
                     </div>
-                    <div class="w-96 text-center text-xs mb-6 max-[480px]:text-[10px] max-[480px]:mb-[10px] max-[480px]:w-[200px] ">
+                    <div class="w-96 text-center text-xs">
                         <p>20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
                     </div>
-                    <div class="w-96 h-10 flex justify-between items-center backdrop-blur-[500px] rounded-md pl-2 text-xs
-                    max-[480px]:w-[170px] max-[480px]:h-[20px] max-[480px]:pl-[7px] max-[480px]:text-[7px] max-[480px]:items-center max-[480px]:rounded-[7px]">
-                        <input class="w-80 px-2 h-[30px] bg-transparent max-[480px]:w-[150px] outline-none placeholder:text-[#FFFFFF] max-[480px]:h-[10px] max-[480px]:px-[0px]" type="email" placeholder="enter your email"/>
-                        <button class="bg-[#0E38CD] px-[40px] py-[13px] rounded-e-md hover:bg-[#FFFFFF] hover:text-[#0E38CD] active:bg-[#0E38CD] active:text-[#FFFFFF] max-[480px]:px-[10px] max-[480px]:py-[2px]" type="button">Subscribe</button>
+                    <div class="w-96 flex justify-between items-center backdrop-blur-[500px] rounded-md pl-2 text-xs">
+                        <input class="w-80 px-2 h-[30px] bg-transparent" type="email" placeholder="enter your email"/>
+                        <button class="bg-[#0E38CD] px-[40px] py-[13px] rounded-e-md" type="button">Subscribe</button>
                     </div> 
                 </div>
             </div>
         </div>
     </section>
     <!-- Video Section -->
-    <section class="px-20 pb-20 max-[480px]:px-[10px] max-[480px]:pb-[20px] flex justify-center">
-        <div class="w-3/4 max-[480px]:w-[75%] relative grid">
+    <section class="px-20 py-12 flex justify-center max-lg:px-[5%] max-lg:py-8">
+        <div class="w-4/6 relative grid">
             <img class="rounded-2xl" src="./Asstes/video.png" alt="video">
-            <img class="cursor-pointer absolute justify-self-center self-center max-[480px]:size-[66px]" src="./Asstes/play button.png" alt="play button">
-            <img class="absolute -bottom-4 -right-28 max-[480px]:bottom-[0px] max-[480px]:right-[-6px] max-[480px]:size-[50px]" src="./Asstes/video banner.png" alt="video banner">
+            <img class="cursor-pointer absolute justify-self-center self-center max-lg:size-25 max-md:size-15" src="./Asstes/play button.png" alt="play button">
+            <img class="absolute bottom-0 -right-12 size-50 max-lg:size-25 max-lg:-right-6 max-md:size-15 max-md:bottom-0 max-md:-right-4" src="./Asstes/video banner.png" alt="video banner">
         </div>
     </section>
     <!-- Testimonials Section -->
-    <section class="px-20 py-20 max-[480px]:px-[10px] max-[480px]:py-[10px]"style="background-image: linear-gradient(-180deg,#D9ECFF 100%, #D9ECFF 0%);">
-        <div>
-            <h3 class="font-[Righteous] text-center text-3xl mb-3 text-blue-800
-            max-[480px]:text-[20px] max-[480px]:mb-[5px]">Testimonials</h3>
-            <p class="font-[Righteous] text-center text-md mb-20 max-[480px]:text-[15px] max-[480px]:mb-[50px]">What our student say about us</p>
-            <div class="flex flex-wrap relative justify-center gap-80 max-[480px]:gap-[0px]">
-                <div class="w-96 bg-white px-10 pb-4 pt-10 font-[Righteous] shadow-xl
-                max-[480px]:w-[90%] max-[480px]:mb-[50px]">
+    <section class="px-[5%] py-12 font-[Righteous] max-lg:py-4"style="background-image: linear-gradient(-180deg,#D9ECFF 100%, #D9ECFF 0%);">
+        <div class="flex flex-col gap-y-32 max-lg:gap-y-12 max-md:gap-y-20">
+            <div class="flex flex-col gap-y-2 relative">
+                <img class="absolute top-0 left-0 max-xl:hidden" src="./Asstes/half circul.png" alt="">
+                <h3 class="text-center text-3xl text-blue-800">Testimonials</h3>
+                <p class="text-center">What our student say about us</p>
+            </div>
+            <div class="flex relative justify-center gap-x-80 max-lg:gap-8 max-md:flex-col max-md:gap-y-14 max-md:items-center">
+                <div class="w-96 bg-white px-10 pb-4 pt-10 shadow-xl max-lg:w-1/3 max-md:w-96">
                     <div class="relative">
-                        <img class="absolute -top-20 left-28 max-[480px]:w-[43px] max-[480px]:h-[50px] max-[480px]:top-[-55%] max-[480px]:left-[42%]" src="./Asstes/t-monialProfile.png" alt="t-monialProfile">
+                        <img class="absolute -top-20 left-28 max-lg:left-12 max-md:left-28" src="./Asstes/t-monialProfile.png" alt="t-monialProfile">
                         <p class="text-sm mb-6">Such an amazing traniner and easily understand the entire syllabus, and the guidence will be super and good to the way of explaning.</p>
                         <img src="./Asstes/rating star.png" alt="rating star">
                     </div>
                 </div>
-                <div class="w-96 bg-white px-10 pb-4 pt-10 font-[Righteous] shadow-xl absolute -top-10 
-                max-[480px]:w-[90%] max-[480px]:mb-[50px] max-[480px]:static">
+                <div class="w-96 bg-white px-10 pb-4 pt-10 shadow-xl absolute -top-10 max-lg:static max-lg:w-1/3 max-md:w-96">
                     <div class="relative">
-                        <img class="absolute -top-20 left-28 max-[480px]:w-[43px] max-[480px]:h-[50px] max-[480px]:top-[-55%] max-[480px]:left-[42%]" src="./Asstes/t-monialProfile.png" alt="t-monialProfile">
+                        <img class="absolute -top-20 left-28 max-lg:left-12 max-md:left-28" src="./Asstes/t-monialProfile.png" alt="t-monialProfile">
                         <p class="text-sm mb-6">Such an amazing traniner and easily understand the entire syllabus, and the guidence will be super and good to the way of explaning.</p>
                         <img src="./Asstes/rating star.png" alt="rating star">
                     </div>
                 </div>
-                <div class="w-96 bg-white px-10 pb-4 pt-10 font-[Righteous] shadow-xl
-                max-[480px]:w-[90%] max-[480px]:mb-[10px]">
+                <div class="w-96 bg-white px-10 pb-4 pt-10 shadow-xl max-lg:w-1/3 max-md:w-96">
                     <div class="relative">
-                        <img class="absolute -top-20 left-28 max-[480px]:w-[43px] max-[480px]:h-[50px] max-[480px]:top-[-55%] max-[480px]:left-[42%]" src="./Asstes/t-monialProfile.png" alt="t-monialProfile">
+                        <img class="absolute -top-20 left-28 max-lg:left-12 max-md:left-28" src="./Asstes/t-monialProfile.png" alt="t-monialProfile">
                         <p class="text-sm mb-6">Such an amazing traniner and easily understand the entire syllabus, and the guidence will be super and good to the way of explaning.</p>
                         <img src="./Asstes/rating star.png" alt="rating star">
                     </div>
                 </div>
             </div>
-            <div class="flex justify-end mt-20 max-[480px]:mt-[0px]">
-                <img class="cursor-pointer max-[480px]:w-[33px] max-[480px]:h-[31px]" src="./Asstes/Back Arrow.png" alt="Back">
-                <img class="cursor-pointer max-[480px]:w-[33px] max-[480px]:h-[31px]" src="./Asstes/Front Arrow.png" alt="Front">
+            <div class="flex justify-end">
+                <img class="cursor-pointer" src="./Asstes/Back Arrow.png" alt="Back">
+                <img class="cursor-pointer" src="./Asstes/Front Arrow.png" alt="Front">
             </div>
         </div>
     </section>
     <!-- Footer Section -->
-    <footer class="pt-10 max-[480px]:pt-[10px] font-[Righteous]"style="background-image: linear-gradient(74deg,#931BBD 0%, #477AE3 100%);">
-        <div class="flex px-20 pb-6 max-[480px]:px-[15px] max-[480px]:pb-[10px] max-[480px]:flex-wrap">
-            <div class="w-2/6 order-1 max-[480px]:w-[70%] max-[480px]:order-3 max-[480px]:mt-[10px]">
-                <h1 class="text-lg ml-6 mb-4 max-[480px]:text-[15px] max-[480px]:mb-[9px] max-[480px]:ml-[0px]">Connect</h1>
-                <img class="w-40 mix-blend-multiply max-[480px]:w-[80px] max-[480px]:mb-[9px] max-[480px]:ml-[0px]" src="./Asstes/logo.png" alt="logo">
-                <p class="text-xs pr-36 max-[480px]:text-[10px] max-[480px]:pr-[0px]">Sri Jagannath Nivas,8-1-164/345/A/1, Pragati Colony, Mailardevpally, Nawab Saheb Kunta, Hyd, 500005</p>
+    <footer class="pt-10 font-[Righteous]"style="background-image: linear-gradient(74deg,#931BBD 0%, #477AE3 100%);">
+        <div class="grid grid-cols-6 px-[5%] gap-8 max-lg:gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
+            <div class="col-span-2 flex flex-col gap-2">
+                <h1 class="text-lg">Connect</h1>
+                <img class="w-40 mix-blend-multiply" src="./Asstes/logo.png" alt="logo">
+                <p class="text-xs max-sm:">Sri Jagannath Nivas,8-1-164/345/A/1, Pragati Colony, Mailardevpally, Nawab Saheb Kunta, Hyd, 500005</p>
             </div>
-            <div class="order-2 max-[480px]:order-1 grid grid-cols-3 gap-4">
-                <div>
-                    <h1 class="text-2xl mb-4 max-[480px]:text-[15px] max-[480px]:mb-[5px] max-[480px]:leading-[20px]">Classes</h1>
-                    <ul class="text-base max-[480px]:text-[10px] max-[480px]:leading-[15px]">
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Classroom courses</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Virtual classroom courses</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">E-learning courses</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Video Courses</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Offline Courses</li>
-                    </ul>
-                </div>
-                <div>
-                    <h1 class="text-2xl mb-4 max-[480px]:text-[15px] max-[480px]:mb-[5px] max-[480px]:leading-[20px]">Community</h1>
-                    <ul class="text-base max-[480px]:text-[10px] max-[480px]:leading-[15px]">
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Learners</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Parteners</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Developers</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Transactions</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Blog</li>
-                    </ul>
-                </div>
-                <div>
-                    <h1 class="text-2xl mb-4 max-[480px]:text-[15px] max-[480px]:mb-[5px] max-[480px]:leading-[20px]">Quick links</h1>
-                    <ul class="text-base max-[480px]:text-[10px] max-[480px]:leading-[15px]">
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Home</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Professional Education</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Courses</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Admissions</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Testimonial</li>
-                        <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[0px]">Programs</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w-1/6 order-3 max-[480px]:order-2 flex justify-end max-[480px]:mt-[10px] max-[480px]:justify-normal max-[480px]:w-[30%]">
-                <div class="">
-                    <h1 class="text-2xl mb-4 max-[480px]:text-[15px] max-[480px]:mb-[5px] max-[480px]:leading-[20px]">More</h1>
-                <ul class="text-base max-[480px]:text-[10px] max-[480px]:leading-[15px]">
-                    <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[2px]">Press</li>
-                    <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[2px]">Investors</li>
-                    <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[2px]">Terms</li>
-                    <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[2px]">Privacy</li>
-                    <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[2px]">Help</li>
-                    <li class="cursor-pointer hover:text-white active:text-black mb-2 max-[480px]:mb-[2px]">Contact</li>
+            <div class="flex flex-col gap-2">
+                <h1 class="text-2xl hover:text-white">Classes</h1>
+                <ul class="text-base">
+                    <li class="cursor-pointer hover:text-white">Classroom courses</li>
+                    <li class="cursor-pointer hover:text-white">Virtual classroom courses</li>
+                    <li class="cursor-pointer hover:text-white">E-learning courses</li>
+                    <li class="cursor-pointer">Video Courses</li>
+                    <li class="cursor-pointer">Offline Courses</li>
                 </ul>
-                </div>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h1 class="text-2xl">Community</h1>
+                <ul class="text-base">
+                    <li class="cursor-pointer">Learners</li>
+                    <li class="cursor-pointer">Parteners</li>
+                    <li class="cursor-pointer">Developers</li>
+                    <li class="cursor-pointer">Transactions</li>
+                    <li class="cursor-pointer">Blog</li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h1 class="text-2xl">Quick links</h1>
+                <ul class="text-base">
+                    <li class="cursor-pointer">Home</li>
+                    <li class="cursor-pointer">Professional Education</li>
+                    <li class="cursor-pointer">Courses</li>
+                    <li class="cursor-pointer">Admissions</li>
+                    <li class="cursor-pointer">Testimonial</li>
+                    <li class="cursor-pointer">Programs</li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h1 class="text-2xl">More</h1>
+                <ul class="text-base">
+                    <li class="cursor-pointer">Press</li>
+                    <li class="cursor-pointer">Investors</li>
+                    <li class="cursor-pointer">Terms</li>
+                    <li class="cursor-pointer">Privacy</li>
+                    <li class="cursor-pointer">Help</li>
+                    <li class="cursor-pointer">Contact</li>
+                </ul>
             </div>
         </div>
-        <div class="flex justify-center gap-8 pt-4 pb-2 max-[480px]:py-[5px]" style="background-image: linear-gradient(90deg ,#a33fc6 0%, #1a6ccf 31%);">
-            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer max-[480px]:p-[5px]">
-                <img class="max-[480px]:w-[20px]" src="./Asstes/Instagram.png" alt="Instagram">
+        <div class="flex justify-center gap-4 p-2" style="background-image: linear-gradient(90deg ,#a33fc6 0%, #1a6ccf 31%);">
+            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer">
+                <img class="" src="./Asstes/Instagram.png" alt="Instagram">
             </div>
-            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer max-[480px]:p-[5px] ">
-                <img class="max-[480px]:w-[20px]" src="./Asstes/WhatsApp.png" alt="WhatsApp">
+            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer">
+                <img class="" src="./Asstes/WhatsApp.png" alt="WhatsApp">
             </div>
-            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer max-[480px]:p-[5px] ">
-                <img class="max-[480px]:w-[20px]" src="./Asstes/Twitter.png" alt="Twitter">
+            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer">
+                <img class="" src="./Asstes/Twitter.png" alt="Twitter">
             </div>
-            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer max-[480px]:p-[5px] ">
-                <img class="max-[480px]:w-[20px]" src="./Asstes/LinkedIn.png" alt="LinkedIn">
+            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer">
+                <img class="" src="./Asstes/LinkedIn.png" alt="LinkedIn">
             </div>
-            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer max-[480px]:p-[5px] ">
-                <img class="max-[480px]:w-[20px]" src="./Asstes/YouTube.png" alt="YouTube">
+            <div class="p-2 rounded-full bg-white hover:bg-blue-500 cursor-pointer">
+                <img class="" src="./Asstes/YouTube.png" alt="YouTube">
             </div>
         </div>
         <div>
-            <p class="bg-[#2554da] text-center text-white text-xs max-[480px]:text-[7px]">Copyright @ 2023 askmeidentity. All Rights Reserved</p>
+            <p class="bg-[#2554da] text-center text-white text-xs">Copyright @ 2023 askmeidentity. All Rights Reserved</p>
         </div>
     </footer>  
 </body>
